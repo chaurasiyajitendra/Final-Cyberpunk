@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user Profile</title>
+    <link rel="stylesheet" href="user.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-picture-container" onclick="document.getElementById('fileInput').click()">
+                <img src="https://via.placeholder.com/180" alt="Profile Picture" class="profile-picture" id="profilePic">
+                <div class="profile-picture-overlay">
+                    <i class="fas fa-camera"></i> Change Photo
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="updateProfilePicture(this)">
+            </div>
+            <div class="user-info">
+                <h2>John Doe</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Member Since</h3>
+                        <p>January 2024</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-key"></i>
+                        <h3>Active Licenses</h3>
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <i class="fas fa-history"></i>
+            <h3>Recent Purchases</h3>
+        </div>
+        <div class="order-history">
+            <div class="order-card">
+                <div class="order-header">
+                    <h4>License #12345</h4>
+                    <span>January 15, 2024</span>
+                </div>
+                <p>Professional Video Editor Pro - $299.99</p>
+                <p>Status: Active</p>
+            </div>
+            <div class="order-card">
+                <div class="order-header">
+                    <h4>License #12346</h4>
+                    <span>January 20, 2024</span>
+                </div>
+                <p>Cloud Storage Manager Premium - $199.99</p>
+                <p>Status: Active</p>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <i class="fas fa-key"></i>
+            <h3>Software Licenses</h3>
+        </div>
+        <div class="license-list">
+            <div class="license-card" data-license-id="1">
+                <h4>Professional Video Editor Pro</h4>
+                <p class="license-key">XXXX-XXXX-XXXX-1234</p>
+                <p class="expiry">Valid until: Jan 15, 2025</p>
+                <p class="devices">Activated on 2/3 devices</p>
+                <button class="edit-btn" onclick="openLicenseModal(1)">Manage License</button>
+            </div>
+            <div class="license-card" data-license-id="2">
+                <h4>Cloud Storage Manager Premium</h4>
+                <p class="license-key">XXXX-XXXX-XXXX-5678</p>
+                <p class="expiry">Valid until: Jan 20, 2025</p>
+                <p class="devices">Activated on 1/2 devices</p>
+                <button class="edit-btn" onclick="openLicenseModal(2)">Manage License</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- License Management Modal -->
+    <div id="licenseModal" class="license-modal">
+        <div class="license-modal-content">
+            <h3>Manage License</h3>
+            <form id="licenseForm" class="license-form">
+                <input type="hidden" id="licenseId">
+                <input type="text" id="softwareName" readonly>
+                <input type="text" id="licenseKey" readonly>
+                <input type="text" id="expiryDate" readonly>
+                <p>Active Devices:</p>
+                <div id="deviceList"></div>
+                <button type="button" onclick="deactivateDevice()">Deactivate Device</button>
+                <button type="button" onclick="closeLicenseModal()">Close</button>
+            </form>
+        </div>
+    </div>
+<script src="user.js"></script>
+</body>
+</html>

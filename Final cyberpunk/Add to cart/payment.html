@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .timer {
+            font-size: 24px;
+            color: #e74c3c;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .message {
+            color: #666;
+            margin: 15px 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .expire-warning {
+            color: #e74c3c;
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal Logo" class="logo">
+        <h1>PayPal Payment</h1>
+        <p class="message">Scan the QR code below to complete your payment</p>
+        
+        <div class="qr-code">
+            <!-- Replace with actual QR code image -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PayPalPaymentLink" alt="Payment QR Code">
+        </div>
+
+        <div class="timer" id="timer">02:00</div>
+        <p class="message">This QR code will expire in <span id="timeLeft">2 minutes</span></p>
+    </div>
+
+    <script>
+        // Timer functionality
+        function startTimer(duration, display) {
+            let timer = duration;
+            let minutes, seconds;
+            
+            const countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+                
+                if (timer <= 30) {
+                    display.classList.add('expire-warning');
+                }
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "EXPIRED";
+                    window.location.href = 'Cart.html';
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const twoMinutes = 60 * 2;
+            const display = document.querySelector('#timer');
+            startTimer(twoMinutes, display);
+        };
+    </script>
+</body>
+</html>

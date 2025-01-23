@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../Cyberpunk/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="regi.css">
+    <title>Registation</title>
+</head>
+
+<body>
+    <video src="./ghost-modern-warfare-from-call-of-duty.1920x1080.mp4" autoplay loop muted></video>
+    <div class="wrapper">
+        <div class="regibox">
+            <div class="regiheader">
+                <span>Registation</span>
+            </div>
+            <div class="inputbox">
+                <input type="text" id="user" class="input-fi"  required>
+                <label for="user" class="label">email</label>
+                <i class="bx bx-envelope icon" style="color: white;"></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="pass" class="input-fi" required>
+                <label for="pass" class="label">Password</label>
+                <i class="bx bx-lock-alt icon" onclick="showpass()"></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" id="pw" class="input-fi" required>
+                <label for="pass" class="label">Confirm password</label>
+                <i class="bx bx-lock-alt icon" onclick="pass()"></i>
+            </div>
+            <div class="inputbox">
+                <a href="login.html"><button class="inputSIGNUP">Sign up</button></a>
+            </div>
+            <div class="register">
+                <span style="color: white;">Already have an account ? <a href="login.html">Log in</a></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showpass() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
+        }
+        function pass() {
+            var x = document.getElementById("CP");
+            if (x.type === "password") {
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

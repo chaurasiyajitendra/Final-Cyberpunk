@@ -1,0 +1,253 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif ;
+}
+body{
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+video{
+    position: absolute;
+    height: 870px;
+}
+a:hover{
+    text-decoration: underline;
+}
+.wrapper{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+.loginbox{
+    position: relative;
+    top: -3em;
+    right: -2rem;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color)  ;
+    border-radius:15px ;
+    padding: 7.5em 2.5em 4em 2.5em;
+    box-shadow: 0px 0px 10px 2px rgb(48, 42, 42);
+}
+.loginheader{
+    position: absolute;
+    top:12%;
+    left: 49%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.loginheader span{
+    font-size: 30px;
+    color: transparent;
+    background: -webkit-linear-gradient( rgb(23, 112, 1),rgb(184, 204, 0));
+    -webkit-background-clip: text; 
+
+}
+.inputbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+
+}
+.input-fi{
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+    padding-inline: 20px 50px;
+    border-right: 0.1px solid hsla(119, 99%, 41%, 0.514);
+    border-left: 0.1px solid hsla(66, 100%, 78%, 0.521);
+    border-top: 0.1px solid #04d0017a;
+    border-bottom: 0.1px solid #f4ff907c; 
+    border-radius: 30px;
+    outline: none;
+}
+.user{
+    margin-bottom:10px ;
+}
+.label{
+    position: absolute;
+    top: 19px;
+    left:20px ;
+    transition: .2s;
+    color: white;
+
+}
+.input-fi:focus ~ .label,
+.input-fi:valid ~ .label{
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    font-size: 14px;
+    background-color: rgba(0, 68, 255, 0.842);
+    border-radius: 30px;
+    color: white;
+    padding: 0 10px;
+}
+.icon{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 20px;
+}
+.remember-for{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.inputsubmit{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 204, 255);
+          text-transform: uppercase;
+          text-decoration: none;
+          background: transparent;
+          padding: 10px 20px;
+          font-size: 17px;
+          cursor: pointer;
+          font-weight: bold;
+          background: transparent;
+          position: relative;
+          transition: all 1s;
+          overflow: hidden;
+}
+.inputsubmit:hover {
+    color: white;
+  }
+  
+.inputsubmit::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: rgb(0, 58, 218);
+    z-index: -1;
+    transition: all 2s;
+    box-shadow: 0px 0px 10px 2px rgb(0, 255, 242) ;
+  }
+  
+.inputsubmit:hover::before {
+    width: 160%;
+  }
+.register{
+    text-align: center;
+
+}
+.register a{
+    font-weight: 500;
+}
+.icon{
+    position: relative;
+    top: -38px;
+    right: -16em;
+}
+.inputbox i{
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+   }
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Advanced Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply Animations */
+.loginbox {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.loginheader {
+    animation: slideIn 1s ease-in-out;
+    text-align: center;
+}
+
+.loginheader span {
+    animation: textGlow 2s infinite;
+}
+
+.inputsubmit:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+@keyframes neonFadeOut {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 0 0px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00, 0 0 0px #00ff00;
+    }
+}
+
+.fade-out {
+    animation: neonFadeOut 1s forwards;
+}

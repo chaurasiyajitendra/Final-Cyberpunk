@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure checkout and payment processing for software licenses">
+    <meta name="theme-color" content="#3498db">
+    <title>Secure Checkout - Software</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style">
+    <link rel="preload" href="https://js.stripe.com/v3/" as="script">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Critical Scripts -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+    <script defer src="https://js.stripe.com/v3/"></script>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+    <!-- Rest of the HTML content remains the same -->
+    <!-- The existing structure is already well-organized, just updating styles above -->
+    <div class="container">
+        <!-- Shopping Cart Section -->
+        <section class="cart-section">
+            <h2 class="section-title">
+                <i class="fas fa-shopping-cart pulse"></i> 
+                Your Shopping Cart
+            </h2>
+            
+            <div class="cart-items" id="cartItems">
+                <div class="cart-item" data-product-id="1">
+                    <img src="product-image.jpg" alt="Software Product" loading="lazy">
+                    <div class="item-details">
+                        <h3>Software Name</h3>
+                        <p class="license-type">Professional License</p>
+                        <p class="price" data-price="299.99">$299.99</p>
+                        <p class="subscription-option">
+                            <select class="subscription-select" onchange="updateSubscriptionPrice(this)">
+                                <option value="monthly">Monthly Subscription</option>
+                                <option value="yearly">Yearly Subscription (Save 20%)</option>
+                                <option value="lifetime">Lifetime License</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button class="remove-btn" onclick="removeItem(this)" aria-label="Remove item"><i class="fas fa-trash"></i> Remove</button>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="tax">
+                    <span>Tax (10%):</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="discount" id="discountSection">
+                    <input type="text" id="promoCode" placeholder="Enter promo code">
+                    <button onclick="applyPromoCode()">Apply</button>
+                    <span id="discountAmount" style="display: none;">-$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Billing Section -->
+        <section class="billing-section">
+            <h2><i class="fas fa-credit-card"></i> Billing Information</h2>
+            <form class="billing-form" id="billingForm" onsubmit="handlePurchase(event)">
+                <div id="paymentMethodSelector" class="form-group">
+                    <label>Select Payment Method:</label>
+                    <div class="payment-options">
+                        <button type="button" class="payment-method-btn" data-method="paypal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="fullname" required pattern="[A-Za-z\s]+" title="Please enter a valid name" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-home"></i> Billing Address</label>
+                    <textarea id="address" required autocomplete="street-address"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city"><i class="fas fa-city"></i> City</label>
+                        <input type="text" id="city" required autocomplete="address-level2">
+                    </div>
+                    <div class="form-group">
+                        <label for="state"><i class="fas fa-map-marker-alt"></i> State</label>
+                        <select id="state" required autocomplete="address-level1">
+                            <option value="">Select State</option>
+                            <option value="AN">Andaman and Nicobar Islands</option>
+                            <option value="AP">Andhra Pradesh</option>
+                            <option value="AR">Arunachal Pradesh</option>
+                            <option value="AS">Assam</option>
+                            <option value="BR">Bihar</option>
+                            <option value="CH">Chandigarh</option>
+                            <option value="CT">Chhattisgarh</option>
+                            <option value="DN">Dadra and Nagar Haveli</option>
+                            <option value="DD">Daman and Diu</option>
+                            <option value="DL">Delhi</option>
+                            <option value="GA">Goa</option>
+                            <option value="GJ">Gujarat</option>
+                            <option value="HR">Haryana</option>
+                            <option value="HP">Himachal Pradesh</option>
+                            <option value="JK">Jammu and Kashmir</option>
+                            <option value="JH">Jharkhand</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="KL">Kerala</option>
+                            <option value="LA">Ladakh</option>
+                            <option value="LD">Lakshadweep</option>
+                            <option value="MP">Madhya Pradesh</option>
+                            <option value="MH">Maharashtra</option>
+                            <option value="MN">Manipur</option>
+                            <option value="ML">Meghalaya</option>
+                            <option value="MZ">Mizoram</option>
+                            <option value="NL">Nagaland</option>
+                            <option value="OR">Odisha</option>
+                            <option value="PY">Puducherry</option>
+                            <option value="PB">Punjab</option>
+                            <option value="RJ">Rajasthan</option>
+                            <option value="SK">Sikkim</option>
+                            <option value="TN">Tamil Nadu</option>
+                            <option value="TG">Telangana</option>
+                            <option value="TR">Tripura</option>
+                            <option value="UP">Uttar Pradesh</option>
+                            <option value="UT">Uttarakhand</option>
+                            <option value="WB">West Bengal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip"><i class="fas fa-mail-bulk"></i> ZIP Code</label>
+                        <input type="text" id="zip" required pattern="[0-9]{6}" title="Please enter a valid 5-digit ZIP code" autocomplete="postal-code">
+                    </div>
+                </div>
+                <div id="cardPaymentSection" class="payment-info">
+                    <h3><i class="fas fa-lock"></i> Payment Information</h3>
+                    <div id="card-element" class="form-group">
+                        <!-- Stripe Elements will be inserted here -->
+                    </div>
+                    <div id="card-errors" role="alert" class="payment-error"></div>
+                </div>
+                <div class="license-agreement">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms"><i class="fas fa-file-contract"></i> I agree to the software license terms and conditions</label>
+                </div>
+                <button type="submit" class="checkout-btn" id="submitButton">
+                    <i class="fas fa-lock"></i> <span id="submitButtonText">Complete Purchase</span>
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Added loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing your payment...</p>
+    </div>
+<script src="cart.js"></script>
+</body>
+</html>

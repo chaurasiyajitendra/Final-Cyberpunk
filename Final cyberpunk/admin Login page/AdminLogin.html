@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AdminLogin.css">
+    <link rel="shortcut icon" href="../Cyberpunk/favicon.png" type="image/x-icon">
+    <title>Admin Login</title> 
+</head>
+<body class="container">
+    <h3>Join us to make more profit </h3>
+    <div class="container-two">
+        <input id="signup_toggle" type="checkbox">
+        <form class="form">
+            <div class="form_front">
+                <div class="form_details">Login</div>
+                <input type="text" class="input" placeholder="Username" required>
+                <input type="password" class="input" placeholder="Password" required>
+                <button class="btn">Login</button>
+                <span class="switch">Don't have an account? 
+                    <label for="signup_toggle" class="signup_tog">
+                        Sign Up
+                    </label>
+                </span>
+            </div>
+            <div class="form_back">
+                <div class="form_details">SignUp</div>
+                <input type="text" class="input" placeholder="Firstname" required>
+                <input type="text" class="input" placeholder="Username" required>
+                <input type="text" class="input" placeholder="Password" required>
+                <input type="password" class="input" placeholder="Confirm Password" required>
+                <button class="btn">Signup</button>
+                <span class="switch">Already have an account? 
+                    <label for="signup_toggle" class="signup_tog">
+                        Sign In
+                    </label>
+                </span>
+            </div>
+        </form>
+    </div>
+<script src="./AdminLogin.js"></script>
+</body>
+</html>

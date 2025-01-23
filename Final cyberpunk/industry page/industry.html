@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Industry Store</title>
+    <link rel="stylesheet" href="industry.css">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="head">
+            <header>
+                <img src="../buy now page/Product/logo-black.png" class="logo">
+                <div id="grp">
+                    <ul id="nav">
+                        <li><a href="../Add to cart/Cart.html" class="bx bx-cart-alt"></a></li>
+                        <li><a href="../User Dasborad page/user.html" class="bx bx-user"></a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <!-- Adobe Premiere Pro -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="./img/premiere-pro.svg" alt="Adobe Premiere Pro">
+            <div class="product-Description">
+                <h2 class="product-name">Adobe Premiere Pro</h2>
+                <p>Professional video editing software for film, TV, and the web.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $239.88</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Adobe Photoshop -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="./img/photoshop.svg" alt="Adobe Photoshop">
+            <div class="product-Description">
+                <h2 class="product-name">Adobe Photoshop</h2>
+                <p>The world's best imaging and graphic design software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $239.88</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- QuickBooks -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="./img/Online Book.svg" alt="QuickBooks">
+            <div class="product-Description">
+                <h2 class="product-name">QuickBooks Online</h2>
+                <p>Accounting software to manage your business finances.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $25.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Blender -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="./img/blender.png" alt="Blender">
+            <div class="product-Description">
+                <h2 class="product-name">Blender</h2>
+                <p>Open-source 3D modeling, animation, and rendering software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $155.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Autodesk Maya -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="./img/maya.webp" alt="Autodesk Maya">
+            <div class="product-Description">
+                <h2 class="product-name">Autodesk Maya</h2>
+                <p>3D modeling and animation software for film and games.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $1,545.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Cinema 4D -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="./img/cinema4d.png" alt="Cinema 4D">
+            <div class="product-Description">
+                <h2 class="product-name">Maxon Cinema 4D</h2>
+                <p>Professional 3D modeling, animation, and rendering software.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $999.00</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+<script src="../game page/game.js"></script>
+</body>
+</html>

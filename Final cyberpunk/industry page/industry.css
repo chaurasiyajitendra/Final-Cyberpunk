@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.head {
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+#nav {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+#nav li a {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#nav li a:hover {
+    color: #3498db;
+}
+
+#grp {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.main-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.product-one, .product-two {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-one:hover, .product-two:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.Circle, .Circle-two {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.1;
+    transition: transform 0.5s ease;
+}
+
+.Circle {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    right: -200px;
+    top: -200px;
+}
+
+.Circle-two {
+    background: linear-gradient(45deg, #e74c3c, #f1c40f);
+    left: -200px;
+    bottom: -200px;
+}
+
+.product-one:hover .Circle,
+.product-two:hover .Circle-two {
+    transform: scale(1.2);
+}
+
+.product-one img, .product-two img {
+    width: 150px;
+    height: auto;
+    max-width: 100%;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.product-one img:hover, .product-two img:hover {
+    transform: scale(1.05);
+}
+
+.product-Description {
+    flex: 1;
+    z-index: 1;
+}
+
+.product-name {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.product-Description p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.product-Price {
+    text-align: right;
+    margin-left: 3rem;
+    z-index: 1;
+}
+
+.product-Price h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .product-one, .product-two {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .product-one img, .product-two img {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .product-Price {
+        margin-left: 0;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .btn {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #nav {
+        gap: 1.5rem;
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: opacity 0.5s ease; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+    display: none; /* Start hidden */
+}

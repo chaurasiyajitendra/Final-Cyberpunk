@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Your Business</title>
+    <link rel="stylesheet" href="grow.css">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="notification" class="notification" style="display: none;"></div>
+    <div class="head">
+        <header>
+            <img src="../buy now page/Product/logo-black.png" class="logo" alt="Grow Store Logo">
+            <div id="grp">
+                <ul id="nav">
+                    <li><a href="#" class="bx bx-category-alt"></a></li>
+                    <li><a href="../Add to cart/Cart.html" class="bx bx-cart-alt"></a></li>
+                    <li><a href="../User Dasborad page/user.html" class="bx bx-user"></a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <h1>Welcome to the Grow Your Business Store</h1>
+        <div class="product-container">
+            <!-- Example Product 1: Business Book -->
+            <div class="product-card">
+                <img src="./img/BB book.jpeg" alt="Business Book">
+                <div class="product-description">
+                    <h2 class="product-name">The Lean Startup</h2>
+                    <p>Learn how to build a successful startup with this essential guide.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $29.99</h2>
+                    <button class="btn" onclick="addToCart(this, 'The Lean Startup')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Example Product 2: Online Course -->
+            <div class="product-card">
+                <img src="./img/DM masterclass.jpeg" alt="Online Course">
+                <div class="product-description">
+                    <h2 class="product-name">Digital Marketing Masterclass</h2>
+                    <p>Master digital marketing strategies to grow your business.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $49.99</h2>
+                    <button class="btn" onclick="addToCart(this, 'Digital Marketing Masterclass')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Example Product 3: Productivity Planner -->
+            <div class="product-card">
+                <img src="./img/Daily productive.webp" alt="Productivity Planner">
+                <div class="product-description">
+                    <h2 class="product-name">Daily Productivity Planner</h2>
+                    <p>Stay organized and boost your productivity with this planner.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $19.99</h2>
+                    <button class="btn" onclick="addToCart(this, 'Daily Productivity Planner')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Example Product 4: Business Coaching -->
+            <div class="product-card">
+                <img src="./img/1To1.webp" alt="Business Coaching">
+                <div class="product-description">
+                    <h2 class="product-name">1-on-1 Business Coaching</h2>
+                    <p>Get personalized coaching to help you grow your business.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $199.99</h2>
+                    <button class="btn" onclick="addToCart(this, '1-on-1 Business Coaching')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Example Product 5: Networking Event -->
+            <div class="product-card">
+                <img src="./img/Networking.jpeg" alt="Networking Event">
+                <div class="product-description">
+                    <h2 class="product-name">Startup Networking Event</h2>
+                    <p>Connect with other entrepreneurs and grow your network.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $39.99</h2>
+                    <button class="btn" onclick="addToCart(this, 'Startup Networking Event')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Example Product 6: Personal Development Course -->
+            <div class="product-card">
+                <img src="./img/Personal.webp" alt="Personal Development Course">
+                <div class="product-description">
+                    <h2 class="product-name">Personal Development Course</h2>
+                    <p>Enhance your skills and mindset for personal and professional growth.</p>
+                </div>
+                <div class="product-price">
+                    <h2>Price: $59.99</h2>
+                    <button class="btn" onclick="addToCart(this, 'Personal Development Course')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="grow.js"></script>
+</body>
+</html>

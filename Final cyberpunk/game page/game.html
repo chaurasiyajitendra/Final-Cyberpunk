@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+    <link rel="shortcut icon" href="../buy now page/Product/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Game Store</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="head">
+            <header>
+                <img src="../buy now page/Product/logo-black.png" class="logo">
+                <div id="grp">
+                    <ul id="nav">
+                        <li><a href="../Add to cart/Cart.html" class="bx bx-cart-alt"></a></li>
+                        <li><a href="../User Dasborad page/user.html" class="bx bx-user"></a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <!-- Red Dead Redemption 2 --> 
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="./img/rdr2.jpg" alt="Red Dead Redemption 2">
+            <div class="product-Description">
+                <h2 class="product-name">Red Dead Redemption 2</h2>
+                <p>Experience an epic tale of honor and loyalty in the dying days of the outlaw age. A prequel to the original Red Dead Redemption, this sprawling tale of the American West and adventure features a vast and atmospheric world alongside a thrilling story.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $59.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- The Last of Us Part II -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png" alt="The Last of Us Part II">
+            <div class="product-Description">
+                <h2 class="product-name">The Last of Us Part II</h2>
+                <p>Five years after their dangerous journey across the post-pandemic United States, Ellie and Joel have settled down in Jackson, Wyoming. Living amongst a thriving community of survivors has allowed them peace and stability, despite the constant threat of the infected and other, more desperate survivors.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $49.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Cyberpunk 2077 -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="./img/cyberpunk2077.jpeg" alt="Cyberpunk 2077">
+            <div class="product-Description">
+                <h2 class="product-name">Cyberpunk 2077</h2>
+                <p>Cyberpunk 2077 is an open-world, action-adventure RPG set in Night City, a megalopolis obsessed with power, glamour and body modification. Take on the role of V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $54.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- God of War Ragnarök -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png" alt="God of War Ragnarök">
+            <div class="product-Description">
+                <h2 class="product-name">God of War Ragnarök</h2>
+                <p>Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on and letting go. Against a backdrop of Norse Realms torn asunder by the fury of the Aesir, they've been trying their best to remain hidden and protect their family.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $69.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Elden Ring -->
+        <div class="product-one">
+            <div class="Circle"></div>
+            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png" alt="Elden Ring">
+            <div class="product-Description">
+                <h2 class="product-name">Elden Ring</h2>
+                <p>Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between. A vast world where open fields with a variety of situations and huge dungeons with complex and three-dimensional designs are seamlessly connected.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $59.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-one').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- FIFA 24 -->
+        <div class="product-two">
+            <div class="Circle-two"></div>
+            <img src="./img/es.jpg" alt="EA SPORTS FC 24">
+            <div class="product-Description">
+                <h2 class="product-name">EA SPORTS FC 24</h2>
+                <p>Experience the next evolution of The World's Game with EA SPORTS FC™ 24. Play with over 19,000 fully licensed players, 700+ teams, and 30+ leagues in the most authentic football experience ever.</p>
+            </div>
+            <div class="product-Price">
+                <h2>Price: $64.99</h2>
+                <button class="btn" onclick="addToCart(this, this.closest('.product-two').querySelector('.product-name').innerText)">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="game.js"></script>
+</body>
+</html>
